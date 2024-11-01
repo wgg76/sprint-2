@@ -74,7 +74,7 @@ async function main() {
     console.log(updateSuperHero);
     
     await deleteSuperHero('Spiderman'); // Finalmente, eliminamos al superhéroe
-    console.log(deleteSuperHero);
+    console.log(deleteSuperHero); 
 
     await findSuperHeroes ('Tierra'); // Finalmente, Buscamos al superhéroe
     console.log(findSuperHeroes);

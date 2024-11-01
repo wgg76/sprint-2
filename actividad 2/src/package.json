@@ -1,0 +1,13 @@
+{
+  "name": "sprint3",
+  "version": "1.0.0",
+  "description": "Proyecto MongoDBCompass",
+  "scripts": {
+    "start": "node app.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "mongoose": "^8.8.0"
+  }
+}

@@ -1,17 +1,20 @@
 import mongoose from "mongoose";
 
-const superheroSchema = new mongoose.Schema({
+const superheroeSchema = new mongoose.Schema({
+
+    id: { type: Number, required: true },
     nombreSuperHeroe: { type: String, required: true },
     nombreReal: { type: String, required: true },
-    nombreSociedad: { type: String, default: "Desconocido" },
     edad: { type: Number, min: 0 },
-    planetaOrigen: { type: String, default: "Desconocido" },
-    debilidad: { type: String },
-    poderes: { type: [String], default: [] },
-    habilidadEspecial: { type: String },
-    aliados: { type: [String], default: [] },
-    enemigos: { type: [String], default: [] },
-    creador: { type: String },
-  });
+    planetaOrigen: { type: String, default: 'Desconocido' },
+    debilidad: String,
+    poderes: [String],
+    aliados: [String],
+    enemigos: [String],
+    creado: { type: String },
+    createdAt: { type: Date, default: Date.now }
+
+  },{ collection: 'Grupo-07' }); 
   
-  export default mongoose.model("Superhero", superheroSchema, "Grupo-07");
+
+  export default mongoose.model('SuperHero', superheroeSchema);

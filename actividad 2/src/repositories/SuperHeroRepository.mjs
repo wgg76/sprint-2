@@ -47,14 +47,14 @@ class SuperHeroRepository extends IRepository {
         }
     }
 
-    obtenerMayoresDe30() {
-        try {
-            return SuperHero.find({ edad: { $gt: 30 }, planetaOrigen: 'Tierra', poderes: { $size: { $gte: 2 } } });
-        } catch (error) {
-            console.error('Error al obtener superhéroes mayores de 30:', error);
-            throw new Error('Error al obtener superhéroes mayores de 30');
-        }
-    }
+    async obtenerMayoresDe30() {
+        return await SuperHero.find({
+            edad: { $gt: 30 },
+            planetaOrigen: 'Tierra',
+            $expr: { $gte: [{ $size: "$poderes" }, 2] },
+            
+        });
+}
 }
 
 export default new SuperHeroRepository();
